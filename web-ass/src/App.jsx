@@ -10,15 +10,16 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen h-screen flex flex-col bg-gray-100">
           <Header />
-          <main className="py-6">
+          <main className="flex-1 flex flex-col overflow-auto">
             <Routes>
               <Route path="/add-new-candidate" element={<AddCandidate />} />
               <Route path="/existing-applications" element={<ExistingApplications />} />
               <Route path="*" element={<Navigate to="/add-new-candidate" replace />} />
             </Routes>
           </main>
+
         </div>
       </Router>
     </Provider>
