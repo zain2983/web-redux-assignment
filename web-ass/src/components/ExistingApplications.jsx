@@ -40,7 +40,7 @@ const ExistingApplications = () => {
       <div className="mb-6 max-w-md mx-auto">
         <input
           type="text"
-          placeholder="Search by name, position or skills..."
+          placeholder="Search"
           value={searchTerm}
           onChange={handleSearch}
           className="w-full px-4 py-2 text-base sm:text-lg border rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out"

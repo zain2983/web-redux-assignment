@@ -5,16 +5,16 @@ import { Link, useLocation } from 'react-router-dom';
 const Header = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
   return (
     <nav className="bg-blue-600 text-white shadow-md">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 max-w-screen-xl">
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-xl sm:text-2xl font-bold">HR Candidate Management</h1>
+          <h1 className="text-2xl sm:text-2xl font-bold">Web Assignment</h1>
           
           {/* Mobile menu button */}
           <button 
@@ -38,15 +38,15 @@ const Header = () => {
           </button>
           
           {/* Desktop navigation */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-6">
             <Link 
               to="/add-new-candidate" 
-              className={`px-4 py-2 rounded transition ${location.pathname === '/add-new-candidate' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'}`}>
+              className={`px-4 py-2 rounded-lg transition duration-200 ${location.pathname === '/add-new-candidate' ? 'bg-white text-blue-600' : 'hover:bg-blue-700 hover:text-white'}`}>
               Add New Candidate
             </Link>
             <Link 
               to="/existing-applications" 
-              className={`px-4 py-2 rounded transition ${location.pathname === '/existing-applications' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'}`}>
+              className={`px-4 py-2 rounded-lg transition duration-200 ${location.pathname === '/existing-applications' ? 'bg-white text-blue-600' : 'hover:bg-blue-700 hover:text-white'}`}>
               Existing Applications
             </Link>
           </div>
@@ -55,17 +55,17 @@ const Header = () => {
         {/* Mobile navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-3 border-t border-blue-500">
-            <div className="flex flex-col space-y-2 pb-3">
+            <div className="flex flex-col space-y-2">
               <Link 
                 to="/add-new-candidate" 
-                className={`px-4 py-2 rounded transition ${location.pathname === '/add-new-candidate' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'}`}
+                className={`px-4 py-2 rounded-lg transition duration-200 ${location.pathname === '/add-new-candidate' ? 'bg-white text-blue-600' : 'hover:bg-blue-700 hover:text-white'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Add New Candidate
               </Link>
               <Link 
                 to="/existing-applications" 
-                className={`px-4 py-2 rounded transition ${location.pathname === '/existing-applications' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'}`}
+                className={`px-4 py-2 rounded-lg transition duration-200 ${location.pathname === '/existing-applications' ? 'bg-white text-blue-600' : 'hover:bg-blue-700 hover:text-white'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Existing Applications
